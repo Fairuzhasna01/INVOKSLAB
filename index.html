@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>InvoksLab</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css"> <!-- Link to external CSS file -->
+</head>
+<style>
+    .slider-container {
+        overflow: hidden;
+        position: relative;
+        width: 100%;
+        height: 500px;
+        /* Tinggi slider */
+    }
+
+    .slider {
+        display: flex;
+        transition: transform 0.5s ease-in-out;
+    }
+
+    .slide {
+        min-width: 35%;
+        height: 100%;
+    }
+
+    .slide img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        /* Menjaga aspek rasio gambar */
+    }
+</style>
+
+<body class="font-roboto bg-gray-100">
+    <!-- Header -->
+    <header class="header-gradient">
+        <div class="container mx-auto flex justify-between items-center">
+            <h1 class="text-2xl font-bold">InvoksLab</h1>
+            <nav>
+                <ul class="flex space-x-4">
+                    <li><a class="hover:underline" href="#about">About</a></li>
+                    <li><a class="hover:underline" href="#vision-mission">Vision & Mission</a></li>
+                    <li><a class="hover:underline" href="#organization">Organization</a></li>
+                    <li><a class="hover:underline" href="#laboratories">Laboratories</a></li>
+                    <li><a class="hover:underline" href="#news">News</a></li>
+                    <li><a class="hover:underline" href="#events">Events</a></li>
+                    <li><a class="hover:underline" href="#contact">Map</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <!-- Slider -->
+    <section class="relative">
+        <div class="container mx-auto slider-container">
+            <div class="slider">
+                <div class="slide">
+                    <img src="image7.jpg" alt="Slide 1">
+                </div>
+                <div class="slide">
+                    <img src="image8.jpg" alt="Slide 2">
+                </div>
+                <div class="slide">
+                    <img src="image10.jpg" alt="Slide 3">
+                </div>
+                <div class="slide">
+                    <img src="image1.jpg" alt="Slide 4">
+                </div>
+                <div class="slide">
+                    <img src="image2.jpg" alt="Slide 5">
+                </div>
+                <div class="slide">
+                    <img src="image3.jpg" alt="Slide 6">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        let currentIndex = 0;
+
+        function showNextSlide() {
+            const slider = document.querySelector('.slider');
+            const slides = document.querySelectorAll('.slide');
+            currentIndex = (currentIndex + 1) % slides.length;
+            const offset = -currentIndex * 100; // Move slider left by 100% per slide
+            slider.style.transform = `translateX(${offset}%)`;
+        }
+
+        setInterval(showNextSlide, 3000); // Change slide every 3 seconds
+    </script>
+    <!-- Introduction -->
+    <section class="py-8 bg-gradient" id="about">
+        <div class="container mx-auto text-center">
+            <h2 class="text-3xl font-bold mb-4 text-white">Welcome to InvoksLab!</h2>
+            <p class="text-lg text-white mb-6">InvoksLab adalah website resmi yang menyediakan informasi lengkap tentang
+                seluruh laboratorium yang ada di vokasi Universitas Indonesia. Website ini bertujuan untuk
+                memperkenalkan dan menjelaskan secara detail tentang fasilitas, peralatan, dan kegiatan yang dilakukan
+                di setiap laboratorium.</p>
+            <a href="#vision-mission" class="btn-primary">Learn More</a>
+        </div>
+    </section>
+
+    <!-- Vision and Mission -->
+    <section class="py-8 bg-gray-200" id="vision-mission">
+        <div class="container mx-auto text-center">
+            <h2 class="text-3xl font-bold mb-4 text-center text-blue-900">Vision & Mission</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
+                <div
+                    class="card bg-white p-3 rounded-lg shadow-lg transform transition-transform duration-300 hover:scale-105 hover:shadow-xl">
+                    <h3 class="text-2xl font-bold mb-3 text-blue-900">Visi</h3>
+                    <p class="text-gray-700 text-sm leading-relaxed">Menjadi platform utama yang menyediakan informasi
+                        lengkap dan terpercaya tentang laboratorium di Vokasi Universitas Indonesia, serta mendorong
+                        kolaborasi untuk kemajuan pendidikan dan riset.</p>
+                </div>
+                <div
+                    class="card bg-white p-3 rounded-lg shadow-lg transform transition-transform duration-300 hover:scale-105 hover:shadow-xl">
+                    <h3 class="text-2xl font-bold mb-3 text-blue-900">Misi</h3>
+                    <ul class="list-disc list-inside text-gray-700 text-sm leading-relaxed space-y-1">
+                        <li>Menyediakan informasi akurat dan terkini tentang laboratorium.</li>
+                        <li>Meningkatkan aksesibilitas dan visibilitas laboratorium.</li>
+                        <li>Memfasilitasi kolaborasi antara akademisi, industri, dan komunitas.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+        </div>
+    </section>
+    <!-- Laboratories -->
+    <section class="py-8 bg-gray-200" id="laboratories">
+        <div class="container mx-auto text-center">
+            <h2 class="text-3xl font-bold mb-4 text-center text-blue-900">Laboratories</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <a href="health.html">
+                    <div class="bg-white p-4 rounded shadow hover:shadow-lg duration-300 lab-item">
+                        <img alt="Laboratory Kesehatan" src="image4.jpg" class="laboratory-image mb-4" />
+                        <h3 class="text-xl font-bold mb-2 text-blue-700">Kesehatan</h3>
+                        <p class="text-gray-700">Informasi tentang laboratorium kesehatan yang mencakup berbagai bidang
+                            seperti Fisioterapi, Okupasi Terapi, dan Administrasi Rumah Sakit.</p>
+                    </div>
+                </a>
+
+                <a href="human.html">
+                    <div class="bg-white p-4 rounded shadow hover:shadow-lg duration-300 lab-item">
+                        <img alt="Laboratory Sosial Humaniora" src="image5.jpg" class="laboratory-image mb-4" />
+                        <h3 class="text-xl font-bold mb-2 text-blue-700">Sosial Humaniora</h3>
+                        <p class="text-gray-700">Informasi tentang laboratorium sosial humaniora yang mencakup bidang
+                            seperti Produksi Media, Penyiaran Multimedia, dan Hubungan Masyarakat.</p>
+                    </div>
+                </a>
+
+                <a href="adminis.html">
+                    <div class="bg-white p-4 rounded shadow hover:shadow-lg duration-300 lab-item">
+                        <img alt="Laboratory Administrasi" src="image6.jpeg" class="laboratory-image mb-4" />
+                        <h3 class="text-xl font-bold mb-2 text-blue-700">Administrasi</h3>
+                        <p class="text-gray-700">Informasi tentang laboratorium administrasi yang mencakup bidang
+                            seperti Perbankan, Perpajakan, dan Administrasi Perkantoran.</p>
+                    </div>
+                </a>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- News -->
+    <section class="py-8 bg-gray-200" id="news">
+        <div class="container mx-auto">
+            <h2 class="text-3xl font-bold mb-4 text-center text-blue-900">Latest News</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 latest-news">
+                <div class="bg-white p-4 rounded-lg shadow hover:shadow-xl transition-shadow duration-300 news-item">
+                    <img alt="News image 1" class="mb-4 rounded" src="image7.jpg" />
+                    <h3 class="text-xl font-bold mb-2 text-blue-700">Game Engineers dari UI Bertanding di GameJam+ 2024
+                    </h3>
+                    <p class="text-gray-700">39 mahasiswa Game Development OX-Lab UI, Wire Music Studio, dan SPICE
+                        Studio mengikuti kompetisi game marathon terbesar GameJam+.</p>
+                    <a class="text-blue-500 hover:underline" href="https://www.instagram.com/p/DB_W5Y5SvV1/?img_index=1"
+                        target="_blank">Read more</a>
+                </div>
+                <div class="bg-white p-4 rounded-lg shadow hover:shadow-xl transition-shadow duration-300 news-item">
+                    <img alt="News image 2" class="mb-4 rounded" src="image8.jpg" />
+                    <h3 class="text-xl font-bold mb-2 text-blue-700">Kuliah Umum Asuransi: AIG Indonesia Bahas Liability
+                        Insurance untuk Industri Energi</h3>
+                    <p class="text-gray-700">HIMASIRA UI mengadakan kuliah umum berkolaborasi dengan PT AIG Insurance
+                        Indonesia membahas peran penting asuransi tanggung gugat dalam industri energi.</p>
+                    <a class="text-blue-500 hover:underline"
+                        href="https://www.instagram.com/p/DBaYrxHSYGV/?igsh=anhzdndmdmZmdG1t" target="_blank">Read
+                        more</a>
+                </div>
+                <div class="bg-white p-4 rounded-lg shadow hover:shadow-xl transition-shadow duration-300 news-item">
+                    <img alt="News image 3" class="mb-4 rounded" src="image11.jpg" />
+                    <h3 class="text-xl font-bold mb-2 text-blue-700">Work Solve 2024: Workshop Pengembangan Diri untuk
+                        Mahasiswa</h3>
+                    <p class="text-gray-700">BEM Vokasi UI menggelar acara Work Solve 2024 yang mencakup workshop bedah
+                        CV, talkshow personal branding, dan seminar perencanaan karier.</p>
+                    <a class="text-blue-500 hover:underline"
+                        href="https://www.instagram.com/p/DBaF7BaynLS/?igsh=MTQ3ZWZnb2twejk5Zw%3D%3D"
+                        target="_blank">Read more</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    </section>
+    <!-- Events Calendar -->
+    <section class="py-8 bg-gradient" id="events">
+        <div class="container mx-auto text-center">
+            <h2 class="text-3xl font-bold mb-4 text-white">Upcoming Events</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                <div
+                    class="event-card bg-blue-500 p-4 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300">
+                    <h3 class="text-xl font-bold mb-2 text-white">Open House Vokasi UI</h3>
+                    <p class="text-white">Date: 23-11-2024</p>
+                    <p class="text-white">Yuk cari tau ada jurusan jurusan apa aja di VOKASI UI dan apa aja sih prospek
+                        kerja dan kuliahnya?</p>
+                </div>
+                <div
+                    class="event-card bg-green-500 p-4 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300">
+                    <h3 class="text-xl font-bold mb-2 text-white">Media Experience 2024</h3>
+                    <p class="text-white">Date: 07-12-2024</p>
+                    <p class="text-white">Art exhibition dan lomba dipersembahkan oleh para mahasiswa Produksi Media dan
+                        dibuka untuk umum.</p>
+                </div>
+                <div
+                    class="event-card bg-orange-500 p-4 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300">
+                    <h3 class="text-xl font-bold mb-2 text-white">Coding Week</h3>
+                    <p class="text-white">Date: 02-12-2024</p>
+                    <p class="text-white">Mau cari tau tentang human computer interaction? Mau sekedar kepo atau mau
+                        belajar coding dari awal? Boleh banget buat dateng ke promed lab!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+<!-- Organization Structure -->
+<section class="py-8 bg-gray-100" id="organization">
+    <div class="container mx-auto flex justify-center">
+        <div class="text-center">
+            <h2 class="text-3xl font-bold mb-4 text-center text-blue-900">Organization Structure</h2>
+            <a href="organization.html" class="block mx-auto">
+                <div class="bg-white p-4 rounded-lg shadow hover:shadow-xl transition-shadow duration-300 lab-item max-w-sm"> <!-- Set max width to match news item -->
+                    <img alt="Diagram of InvoksLab's organizational structure" src="image9.jpg" class="laboratory-image mb-4 rounded" />
+                    <h3 class="text-xl font-bold mb-2 text-blue-700">Our Team</h3>
+                    <p class="text-gray-700">Klik di sini untuk mempelajari lebih lanjut tentang struktur organisasi dan kontribusi kami.</p>
+                </div>
+            </a>
+        </div>
+    </div>
+</section>
+    <!-- Contact -->
+    <section class="py-8 bg-gray-200" id="contact">
+        <div class="container mx-auto">
+                </div>
+                <div class="bg-white p-4 rounded shadow">
+                    <h3 class="text-xl font-bold mb-2 text-blue-900">Our Address</h3>
+                    <p class="text-gray-700 mb-4">Universitas Indonesia, Kampus Depok, Jl. Margonda Raya No.100, Depok,
+                        Jawa Barat 16424, Indonesia</p>
+                    <div class="mb-4">
+                        <iframe allowfullscreen="" height="200" loading="lazy"
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3950.804282318074!2d106.84608571766509!3d-6.421366127343837!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69ec325388c2d9%3A0xc75b52238ccba5a1!2sUniversitas%20Indonesia!5e0!3m2!1sen!2sid!4v1634891325187!5m2!1sen!2sid"
+                            style="border:0;" width="100%"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Footer -->
+    <footer class="footer-gradient">
+        <p>© 2024 InvoksLab. All rights reserved.</p>
+    </footer>
+</body>
+
+</html>
